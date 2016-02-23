@@ -1,22 +1,19 @@
 # ShoppingCartApp
+
 You can clone from 
 https://github.com/BigDataCloudComputing/ShoppingCartApp
 
-Pleae note that I have povided both ways of calculating checkour price in CheckOutBill.Scala
-Price=> Returns price without discount
-CheckOutPrice=>Returns Price with discount
-
 Three main classes are ((src/main/scala/sigsltd/shopping/)
-1) ShoppingCart => Defines Items that are eligible for check out which in this case is fruits
-2) CheckOutBill => Allows you to calculate teh correct price with orand without discount
-3) Discountcalculator= > Dfferent calculators for discount calculation
+●  ShoppingCart => Defines Items that are eligible for check out which in this case is fruits
+●  CheckOutBill => Allows you to calculate the correct price with (using CheckoutPrice method) or without discount (using Price method)
+●  Discountcalculator= > Dfferent calculators for discount calculation
 
-Unit tests defined for each of the above classed defined ((src/test/scala/sigsltd/shopping))
-1) ShoppingCartTest
-2) CheckOutBillTest
-3) DiscountcalculatorTest
+Unit tests defined for each of the above classed defined (src/test/scala/sigsltd/shopping)
+●  ShoppingCartTest
+●  CheckOutBillTest
+●  DiscountcalculatorTest
 
-SPEC AS 
+SPEC AS BELOW
 
 Pre-interview Exercise for Developer Candidates
 The following exercise will assess your ability to deliver well structured and maintainable
