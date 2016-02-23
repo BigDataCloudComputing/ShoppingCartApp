@@ -37,5 +37,23 @@ class CheckoutBillTest extends FunSuite with BeforeAndAfter {
     assert(CheckoutBill.Price(shoppingCart.get) equals 1.95)
   }
 
+  test("When the cart contains 2 Apples and 3 Oranges and no discount then the CheckOutPrice for appleDiscount returns a price without discount"){
+    assert(CheckoutBill.CheckOutPrice(shoppingCart.get, DiscountCalculator.appleDiscount) equals 1.35)
+  }
+
+  test("When the cart contains 2 Apples and 3 Oranges and no discount then the CheckOutPrice for orangeDiscount returns a price without discount"){
+    assert(CheckoutBill.CheckOutPrice(shoppingCart.get, DiscountCalculator.orangeDiscount) equals 1.45)
+  }
+  test("When the cart contains 2 Apples and 3 Oranges and no discount then the CheckOutPrice for appleDiscount & orangeDiscount returns a price without discount"){
+    assert(CheckoutBill.CheckOutPrice(shoppingCart.get, DiscountCalculator.appleDiscount, DiscountCalculator.orangeDiscount) equals 0.85)
+  }
+
+  //No Discount will be ignored if discount is provided
+  test("When the cart contains 2 Apples and 3 Oranges and no discount then the CheckOutPrice for noDiscount, appleDiscount & orangeDiscount returns a price without discount"){
+    assert(CheckoutBill.CheckOutPrice(shoppingCart.get, DiscountCalculator.noDiscount,DiscountCalculator.appleDiscount, DiscountCalculator.orangeDiscount) equals 0.85)
+  }
+  test("When the cart contains 5 Apples and 7 Oranges and no discount then the CheckOutPrice for appleDiscount & orangeDiscount returns a price without discount"){
+    assert(CheckoutBill.CheckOutPrice(bigShoppingCart.get, DiscountCalculator.appleDiscount, DiscountCalculator.orangeDiscount) equals 2.55)
+  }
 
 }
